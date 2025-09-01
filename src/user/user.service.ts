@@ -26,10 +26,6 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
-  async deleteByEmail(email: string): Promise<void> {
-    await this.userRepository.delete({ email });
-  }
-
   async validatePassword(user: User, password: string): Promise<boolean> {
     return user.password === password; // Comparaison directe
   }

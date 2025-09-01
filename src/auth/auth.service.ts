@@ -15,7 +15,6 @@ export class AuthService {
   async login(loginDto: LoginDto): Promise<LoginResponseDto> {
     const { email, password } = loginDto;
 
-    // Vérifier si l'utilisateur existe
     let user = await this.userService.findByEmail(email);
 
     if (!user) {
